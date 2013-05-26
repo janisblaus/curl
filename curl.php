@@ -56,6 +56,11 @@ class curl
 			curl_setopt( $this->session, CURLOPT_REFERER, $this->referer );
 		}
 		
+		if( isset( $this->httpheader ) AND !empty( $this->httpheader ) )
+		{
+			curl_setopt( $this->session, CURLOPT_HTTPHEADER, $this->httpheader );
+		}
+		
 		curl_setopt( $this->session, CURLOPT_USERAGENT, $this->uagent );
 		curl_setopt( $this->session, CURLOPT_HEADER,$this->header );
 		curl_setopt( $this->session, CURLOPT_RETURNTRANSFER, true );
